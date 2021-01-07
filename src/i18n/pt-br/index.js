@@ -14,5 +14,11 @@ export default {
     profile: "Perfil",
     sign_out: "Sair",
     send_us_your_feedback: "Envie-nos sua opnião",
-    created_by_the_b_group_for_the_software_engeneering_mba: "Criado pelo Grupo B para o MBA em Engenharia de Software"
+    created_by_the_b_group_for_the_software_engeneering_mba: "Criado pelo Grupo B para o MBA em Engenharia de Software",
+    sign_in: "Entrar",
+    dont_have_an_account: "Não possui uma conta? ",
+    sign_up_here: "Cadastre-se aqui",
+    minutes_of_reading: "minutos de leitura | {count} minuto de leitura | {count} minutos de leitura",
+    minutes_of_watching: "minutos assistindo | {count} minuto assistindo | {count} minutos assistindo",
+    brought_by: "Trazido por"
 }

@@ -1,5 +1,5 @@
 <template>
-    <q-page class="q-pa-lg" style="padding-top: 30vh;">
+    <q-page class="q-pa-lg padding-not-authenticated">
         <q-form class="full-width">
             <div class="row q-col-gutter-sm">
                 <div class="col-12">

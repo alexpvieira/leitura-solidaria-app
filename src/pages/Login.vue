@@ -1,5 +1,5 @@
 <template>
-    <q-page class="q-pa-lg" style="padding-top: 30vh;">
+    <q-page class="q-pa-lg padding-not-authenticated">
         <q-form class="full-width">
             <div class="row q-col-gutter-sm">
                 <div class="col-12">
@@ -15,15 +15,17 @@
                 </div>
 
                 <div class="col-12">
-                    <q-btn class="full-width" color="primary" :label="$t('submit')" @click="$router.push({ name: 'home' })" />
+                    <q-btn class="full-width" color="primary" :label="$t('sign_in')" @click="$router.push({ name: 'home' })" />
+                </div>
+
+                <div class="col-12 text-center">
+                    <q-btn flat dense no-caps color="primary" @click="$router.push({ name: 'register' })">
+                        {{ $t('dont_have_an_account') }} <span class="text-weight-bolder q-ml-xs">{{ $t('sign_up_here') }}</span>
+                    </q-btn>
                 </div>
 
                 <div class="col-12 text-center text-caption">
-                    <router-link to="/recover-password">{{ $t('recover_password') }}</router-link>
-                </div>
-
-                <div class="col-12 q-mt-lg text-center">
-                    <q-btn flat dense no-caps color="secondary" :label="$t('dont_have_an_account_sign_up_here')" @click="$router.push({ name: 'register' })" />
+                    <q-btn flat dense no-caps color="primary" :label="$t('recover_password')" @click="$router.push({ name: 'recover-password' })" />
                 </div>
             </div>
         </q-form>

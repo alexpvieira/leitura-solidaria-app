@@ -14,5 +14,11 @@ export default {
     profile: "Profile",
     sign_out: "Sign out",
     send_us_your_feedback: "Send us your feedback",
-    created_by_the_b_group_for_the_software_engeneering_mba: "Created by the B Group for the Software Engeneering MBA"
+    created_by_the_b_group_for_the_software_engeneering_mba: "Created by the B Group for the Software Engeneering MBA",
+    sign_in: "Sign in",
+    dont_have_an_account: "Don't have an account? ",
+    sign_up_here: "Sign up here",
+    minutes_of_reading: "minutes of reading | {count} minute of reading | {count} minutes of reading",
+    minutes_of_watching: "minutes of watching | {count} minute of watching | {count} minutes of watching",
+    brought_by: 'Brought by'
 }

@@ -1,21 +1,27 @@
 <template>
-    <q-card>
-        <q-parallax :src="item.image" :height="200" />
+    <q-card class="text-blue-grey-8">
+        <img :src="item.image" />
 
         <q-card-section>
-            <div class="text-h6">
+            <div class="text-h6 text-dark text-weight-bold">
                 {{ item.title }}
             </div>
 
             <div class="text-subtitle2">
-                Trazido por {{ item.company }}
+                {{ $t('brought_by') }} {{ item.company }}
             </div>
         </q-card-section>
 
         <q-card-section class="q-pt-none">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {{ item.article_summary }}
         </q-card-section>
+
+        <q-separator />
+
+        <q-card-actions>
+            <q-btn flat no-caps color="primary" icon="fal fa-clock" size="sm" :label="$tc('minutes_of_reading', item.minutes, { count: item.minutes })" />
+            <q-btn flat no-caps color="primary" icon="fal fa-trophy" size="sm" :label="$tc('points', item.points, { count: item.points })" />
+        </q-card-actions>
     </q-card>
 </template>
 

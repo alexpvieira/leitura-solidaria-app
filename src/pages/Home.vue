@@ -7,7 +7,7 @@
 				<c-video v-if="item.type === 'video'" :item="item" />
 			</div>
 		</div>
-
+		
 		<c-ad />
 	</q-page>
 </template>
@@ -27,27 +27,33 @@ export default {
 				{	
 					id: 1,
 					title: 'Lorem Ipsum',
-					image: './news-1.jpg',
-					text: '',
-					company: '',
-					type: 'news'
+					image: './news-1.png',
+					article_summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolore voluptatum est aliquid eaque alias!',
+					company: 'Acme Inc.',
+					type: 'news',
+					points: 10,
+					minutes: 5
 				},
 				{
 					id: 2,
 					title: 'Lorem Ipsum',
-					image: './news-2.jpg',
-					text: '',
-					company: '',
-					type: 'news'
+					image: './news-2.png',
+					article_summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolore voluptatum est aliquid eaque alias!',
+					company: 'Acme Inc.',
+					type: 'news',
+					points: 20,
+					minutes: 3
 				},
 				{
 					id: 3,
 					title: 'Lorem Ipsum',
 					video: 'https://www.youtube.com/embed/wnhvanMdx4s?rel=0',
-					text: '',
-					company: '',
-					type: 'video'
-				},
+					article_summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolore voluptatum est aliquid eaque alias!',
+					company: 'Acme Inc.',
+					type: 'video',
+					points: 40,
+					minutes: 8
+				}
 			]
 		}
 	},
