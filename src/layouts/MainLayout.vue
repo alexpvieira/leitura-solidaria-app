@@ -30,7 +30,7 @@
 							</div>
 
 							<div>
-								<q-icon name="far fa-medal" /> {{ $t('ranking') }} {{ $t('gold') }}
+								<q-icon name="far fa-medal" /> {{ $t('gold_ranking') }}
 							</div>
 
 							<div>
@@ -83,12 +83,19 @@
 						</q-item-section>
 					</q-item>
 				</q-list>
-
-				
 			</q-scroll-area>
 
 			<div class="absolute-bottom text-center q-pa-md text-grey text-caption">
-				{{ $t('created_by_the_b_group_for_the_software_engeneering_mba') }}
+				<div class="row q-col-gutter-md">
+					<div class="col-12">
+						<q-img src="flags/br.svg" class="flag q-mr-md" @click="changeLanguage('pt-br')" />
+						<q-img src="flags/us.svg" class="flag" @click="changeLanguage('en-us')" />
+					</div>
+
+					<div class="col-12">
+						{{ $t('created_by_the_b_group_for_the_software_engeneering_mba') }}
+					</div>
+				</div>
 			</div>
 		</q-drawer>
 
@@ -104,12 +111,14 @@ export default {
 
 	data () {
 		return {
-            left_drawer_open: false
+			left_drawer_open: false
         }
 	},
 
 	methods: {
-
+		changeLanguage(language) {
+			this.$i18n.locale = language
+		}
 	}
 }
 </script>
@@ -120,4 +129,7 @@ export default {
 
 .logo-menu
 	filter brightness(0) invert(1)
+
+.flag
+	max-width 1.5rem
 </style>
