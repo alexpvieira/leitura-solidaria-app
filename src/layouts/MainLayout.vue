@@ -5,19 +5,91 @@
 				<q-btn flat dense round icon="menu" aria-label="Menu" @click="left_drawer_open = !left_drawer_open" />
 
 				<q-toolbar-title>
-					Quasar App
+					{{ $t('solidary_reading') }}
 				</q-toolbar-title>
-
-				<q-btn-toggle v-model="color_mode" toggle-color="primary" color="grey" :options="color_options" @input="changeColorMode()" />
 			</q-toolbar>
 		</q-header>
 
 		<q-drawer v-model="left_drawer_open" show-if-above bordered content-class="bg-grey-1">
-			<q-list>
-				<q-item-label header class="text-grey-8">
-					Essential Links
-				</q-item-label>
-			</q-list>
+			<q-img class="absolute-top header-menu" style="height: 180px">
+				<div class="absolute-bottom bg-transparent">
+					<div class="text-center">
+						<q-img src="logo.png" class="logo-menu" style="width: 80%;" />
+					</div>
+
+					<div class="row q-mt-lg">
+						<div class="col-3">
+							<q-avatar size="56px">
+								<img src="https://cdn.quasar.dev/img/boy-avatar.png">
+							</q-avatar>
+						</div>
+
+						<div class="col-9">
+							<div class="text-weight-bold">
+								<q-icon name="far fa-user" /> José Roberto da Silva
+							</div>
+
+							<div>
+								<q-icon name="far fa-medal" /> {{ $t('ranking') }} {{ $t('gold') }}
+							</div>
+
+							<div>
+								<q-icon name="far fa-trophy" /> {{ $tc('points', 100, { count: 100 }) }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</q-img>
+
+			<q-scroll-area style="height: calc(100% - 180px); margin-top: 180px;">
+				<q-list padding separator>
+					<q-item active clickable v-ripple>
+						<q-item-section avatar>
+							<q-icon name="fas fa-home" />
+						</q-item-section>
+
+						<q-item-section>
+							{{ $t('home') }}
+						</q-item-section>
+					</q-item>
+
+					<q-item clickable v-ripple>
+						<q-item-section avatar>
+							<q-icon name="fas fa-user-edit" />
+						</q-item-section>
+
+						<q-item-section>
+							{{ $t('profile') }}
+						</q-item-section>
+					</q-item>
+
+					<q-item clickable v-ripple>
+						<q-item-section avatar>
+							<q-icon name="fas fa-comments" />
+						</q-item-section>
+
+						<q-item-section>
+							{{ $t('send_us_your_feedback') }}
+						</q-item-section>
+					</q-item>
+
+					<q-item clickable v-ripple @click="$router.push({ name: 'login' })">
+						<q-item-section avatar>
+							<q-icon name="fas fa-sign-out-alt" />
+						</q-item-section>
+
+						<q-item-section>
+							{{ $t('sign_out') }}
+						</q-item-section>
+					</q-item>
+				</q-list>
+
+				
+			</q-scroll-area>
+
+			<div class="absolute-bottom text-center q-pa-md text-grey text-caption">
+				{{ $t('created_by_the_b_group_for_the_software_engeneering_mba') }}
+			</div>
 		</q-drawer>
 
 		<q-page-container>
@@ -32,23 +104,20 @@ export default {
 
 	data () {
 		return {
-            color_mode: 'light',
-            color_options: [{
-                label: 'Light',
-                value: 'light'
-            }, {
-                label: 'Dark',
-                value: 'dark'
-            }],
             left_drawer_open: false
         }
 	},
 
 	methods: {
-		changeColorMode() {
-			if (this.color_mode === 'light') this.$q.dark.set(false)
-			else this.$q.dark.set(true)
-		}
+
 	}
 }
 </script>
+
+<style lang="stylus" scoped>
+.header-menu
+	background-color $primary
+
+.logo-menu
+	filter brightness(0) invert(1)
+</style>

@@ -9,13 +9,15 @@
 		"test": "echo \"No test specified\" && exit 0"
 	},
 	"dependencies": {
-		"@quasar/extras": "^1.0.0",
-		"axios": "^0.18.1",
+		"@fortawesome/fontawesome-pro": "^5.15.1",
+		"@quasar/extras": "^1.9.13",
+		"axios": "^0.21.1",
 		"core-js": "^3.6.5",
-		"quasar": "^1.0.0"
+		"quasar": "^1.15.0",
+		"vue-i18n": "^8.22.2"
 	},
 	"devDependencies": {
-		"@quasar/app": "^2.0.0"
+		"@quasar/app": "^2.1.14"
 	},
 	"browserslist": [
 		"last 10 Chrome versions",
