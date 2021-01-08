@@ -20,5 +20,12 @@ export default {
     sign_up_here: "Sign up here",
     minutes_of_reading: "minutes of reading | {count} minute of reading | {count} minutes of reading",
     minutes_of_watching: "minutes of watching | {count} minute of watching | {count} minutes of watching",
-    brought_by: 'Brought by'
+    brought_by: "Brought by",
+    here_your_reading_is_worth_points: "Here your reading is worth points",
+    every_day_partner_companies_publish_news_that_is_worth_points_when_being_read: "Every day partner companies publish news that is worth points when being read",
+    your_points_become_donations: "Your points become donations",
+    your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
+    you_help_and_stay_informed: "You help and stay informed",
+    at_no_cost_you_do_good_and_you_also_receive_information_about_our_partners: "At no cost you do good and you also receive information about our partners",
+    lets_go: "Let's go"
 }

@@ -1,9 +1,29 @@
+import store from '../store'
+
 const routes = [
+	{
+		path: '/', component: () => import('layouts/IntroductionLayout.vue'),
+		children: [
+			{ 
+				path: '',
+				name: 'introduction',
+				component: () => import('pages/Introduction.vue') 
+			},
+		],
+		beforeEnter: (to, from, next) => {
+			if (store.getters['persist/introduction_watched']) {
+				next({name: 'login'})
+			}
+			else {
+				next()
+			}
+		}
+	},
 	{
 		path: '/', component: () => import('layouts/NotAuthenticatedLayout.vue'),
 		children: [
 			{ 
-				path: '',
+				path: 'login',
 				name: 'login',
 				component: () => import('pages/Login.vue') 
 			},
