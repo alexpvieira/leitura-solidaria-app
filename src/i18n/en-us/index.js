@@ -27,5 +27,14 @@ export default {
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
     you_help_and_stay_informed: "You help and stay informed",
     at_no_cost_you_do_good_and_you_also_receive_information_about_our_partners: "At no cost you do good and you also receive information about our partners",
-    lets_go: "Let's go"
+    lets_go: "Let's go",
+    keep_reading: "Keep reading...",
+    finish_your_reading: "Finish your reading",
+    what_is_your_opinion_about_the_text_you_just_read: "What is your opinion about the text you just read?",
+    keep_on_reading: "Keep on reading",
+    send_my_opinion: "Send my opinion",
+    thanks_for_reading_with_us_today: "Thanks for reading with us today",
+    the_text_you_just_read_helped_a_lot_of_people_thank_you_very_much: "The text you juste read helped a lot of people. Thank you very much!",
+    you_just_earn_points_for_reading_this_text: "You just earned points for reading this text. | You just earned {count} point for reading this text. | You just earned {count} points for reading this text.",
+    ok: "Ok"
 }

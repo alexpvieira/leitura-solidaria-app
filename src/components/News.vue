@@ -16,6 +16,10 @@
             {{ item.article_summary }}
         </q-card-section>
 
+        <q-card-section class="text-right q-pt-none">
+            <q-btn flat dense no-caps :label="$t('keep_reading')" color="primary" @click="$router.push({ name: 'news', params: { id: item.id } })" />
+        </q-card-section>
+
         <q-separator />
 
         <q-card-actions>

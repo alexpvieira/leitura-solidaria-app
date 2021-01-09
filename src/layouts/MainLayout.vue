@@ -2,13 +2,13 @@
 	<q-layout view="lHh Lpr lFf">
 		<q-header elevated>
 			<q-toolbar>
-				<!-- <q-btn flat dense round icon="menu" aria-label="Menu" /> -->
+				<q-btn flat dense round icon="fal fa-chevron-left" v-if="$route.name !== 'home'" @click="$router.replace({ name: 'home' })" />
 
 				<q-toolbar-title class="text-center">
 					{{ $t('solidary_reading') }}
 				</q-toolbar-title>
 
-				<q-btn flat dense round icon="menu" aria-label="Menu" @click="changeDrawerState()" />
+				<q-btn flat dense round icon="fal fa-bars" @click="changeDrawerState()" />
 			</q-toolbar>
 		</q-header>
 

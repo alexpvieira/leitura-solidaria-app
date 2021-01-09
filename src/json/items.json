@@ -1,0 +1,35 @@
+[
+    {	
+        "id": 1,
+        "title": "Lorem Ipsum",
+        "image": "./news-1.png",
+        "article_summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolore voluptatum est aliquid eaque alias!",
+        "full_article": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro expedita maxime perferendis in facere? Mollitia odio facere dolor a veritatis aut perferendis, dolore cumque enim officia explicabo consequuntur accusamus atque.<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non eum asperiores excepturi, necessitatibus eveniet ullam quibusdam veritatis quaerat placeat maxime amet exercitationem quod. Harum commodi, enim minima vitae doloremque cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, blanditiis commodi dolorum eligendi ab dignissimos. Cumque cum soluta neque sunt. Vitae excepturi eligendi maiores magnam qui explicabo sed! Dolorem, iusto.<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga, quae placeat ullam exercitationem explicabo rem iure labore officiis, harum impedit suscipit voluptates debitis repellendus, laboriosam tempore molestiae. Porro, error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam culpa numquam ab tempora sequi, provident rem quam optio illo dolorum facilis, soluta earum obcaecati, illum quo libero nam eos quaerat? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis labore, sint odio error reiciendis necessitatibus totam omnis expedita! Voluptatum ullam sit eaque assumenda deserunt eius laudantium excepturi quasi error culpa!",
+        "company": "Acme Inc.",
+        "type": "news",
+        "points": 10,
+        "minutes": 5
+    },
+    {
+        "id": 2,
+        "title": "Lorem Ipsum",
+        "image": "./news-2.png",
+        "article_summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolore voluptatum est aliquid eaque alias!",
+        "full_article": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro expedita maxime perferendis in facere? Mollitia odio facere dolor a veritatis aut perferendis, dolore cumque enim officia explicabo consequuntur accusamus atque.<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non eum asperiores excepturi, necessitatibus eveniet ullam quibusdam veritatis quaerat placeat maxime amet exercitationem quod. Harum commodi, enim minima vitae doloremque cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, blanditiis commodi dolorum eligendi ab dignissimos. Cumque cum soluta neque sunt. Vitae excepturi eligendi maiores magnam qui explicabo sed! Dolorem, iusto.<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga, quae placeat ullam exercitationem explicabo rem iure labore officiis, harum impedit suscipit voluptates debitis repellendus, laboriosam tempore molestiae. Porro, error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam culpa numquam ab tempora sequi, provident rem quam optio illo dolorum facilis, soluta earum obcaecati, illum quo libero nam eos quaerat? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis labore, sint odio error reiciendis necessitatibus totam omnis expedita! Voluptatum ullam sit eaque assumenda deserunt eius laudantium excepturi quasi error culpa!",
+        "company": "Acme Inc.",
+        "type": "news",
+        "points": 20,
+        "minutes": 3
+    },
+    {
+        "id": 3,
+        "title": "Lorem Ipsum",
+        "video": "https://www.youtube.com/embed/wnhvanMdx4s?rel=0",
+        "article_summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolore voluptatum est aliquid eaque alias!",
+        "full_article": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro expedita maxime perferendis in facere? Mollitia odio facere dolor a veritatis aut perferendis, dolore cumque enim officia explicabo consequuntur accusamus atque.<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non eum asperiores excepturi, necessitatibus eveniet ullam quibusdam veritatis quaerat placeat maxime amet exercitationem quod. Harum commodi, enim minima vitae doloremque cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, blanditiis commodi dolorum eligendi ab dignissimos. Cumque cum soluta neque sunt. Vitae excepturi eligendi maiores magnam qui explicabo sed! Dolorem, iusto.<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga, quae placeat ullam exercitationem explicabo rem iure labore officiis, harum impedit suscipit voluptates debitis repellendus, laboriosam tempore molestiae. Porro, error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam culpa numquam ab tempora sequi, provident rem quam optio illo dolorum facilis, soluta earum obcaecati, illum quo libero nam eos quaerat? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis labore, sint odio error reiciendis necessitatibus totam omnis expedita! Voluptatum ullam sit eaque assumenda deserunt eius laudantium excepturi quasi error culpa!",
+        "company": "Acme Inc.",
+        "type": "video",
+        "points": 40,
+        "minutes": 8
+    }
+]
