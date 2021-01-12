@@ -60,7 +60,7 @@
                     </q-item-section>
                 </q-item>
 
-                <q-item clickable v-ripple @click="$router.push({ name: 'login' })">
+                <q-item clickable v-ripple @click="signOut()">
                     <q-item-section avatar>
                         <q-icon name="fas fa-sign-out-alt" />
                     </q-item-section>
@@ -113,6 +113,17 @@ export default {
             }
         }
 	},
+
+    methods: {
+        changeLanguage(language) {
+			this.$i18n.locale = language
+        },
+        
+        signOut() {
+            this.$store.dispatch('common/SET_DRAWER_STATE', [false])
+            this.$router.push({ name: 'login' })
+        }
+    }
 }
 </script>
 
