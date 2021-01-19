@@ -11,12 +11,12 @@ const routes = [
 			},
 		],
 		beforeEnter: (to, from, next) => {
-			if (store.getters['persist/introduction_watched']) {
-				next({name: 'login'})
-			}
-			else {
+			// if (store.getters['persist/introduction_watched']) {
+			// 	next({name: 'login'})
+			// }
+			// else {
 				next()
-			}
+			// }
 		}
 	},
 	{
