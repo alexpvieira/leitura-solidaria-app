@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="col-12 q-mt-md text-center text-caption">
-                    <router-link to="/">{{ $t('back') }}</router-link>
+                    <router-link :to="{ name: 'login' }">{{ $t('back') }}</router-link>
                 </div>
             </div>
         </q-form>
