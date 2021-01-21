@@ -30,33 +30,13 @@
 
         <q-scroll-area style="height: calc(100% - 160px);">
             <q-list padding separator class="text-blue-grey-5">
-                <q-item active clickable v-ripple>
+                <q-item clickable v-ripple :to="{ name: menu_item.to }" exact v-for="(menu_item, index) in menu_items" :key="index">
                     <q-item-section avatar>
-                        <q-icon name="fas fa-home" />
-                    </q-item-section>
-
-                    <q-item-section :class="active ? 'text-weight-bold' : ''">
-                        {{ $t('home') }}
-                    </q-item-section>
-                </q-item>
-
-                <q-item clickable v-ripple>
-                    <q-item-section avatar>
-                        <q-icon name="fas fa-user-edit" />
+                        <q-icon :name="menu_item.icon" />
                     </q-item-section>
 
                     <q-item-section>
-                        {{ $t('profile') }}
-                    </q-item-section>
-                </q-item>
-
-                <q-item clickable v-ripple>
-                    <q-item-section avatar>
-                        <q-icon name="fas fa-comments" />
-                    </q-item-section>
-
-                    <q-item-section>
-                        {{ $t('send_us_your_feedback') }}
+                        {{ $t(menu_item.label) }}
                     </q-item-section>
                 </q-item>
 
@@ -95,7 +75,38 @@ export default {
 
     data() {
         return {
-			active: true
+			menu_items: [
+                {
+                    to: 'home',
+                    icon: 'fas fa-home',
+                    label: 'home'
+                },
+                {
+                    to: 'profile',
+                    icon: 'fas fa-user-edit',
+                    label: 'profile'
+                },
+                {
+                    to: 'ranking-and-badges',
+                    icon: 'fas fa-trophy',
+                    label: 'ranking_and_badges'
+                },
+                {
+                    to: 'previously-read-news-list',
+                    icon: 'fas fa-newspaper',
+                    label: 'previously_read_news'
+                },
+                {
+                    to: 'feedback',
+                    icon: 'fas fa-comments',
+                    label: 'send_us_your_feedback'
+                },
+                {
+                    to: 'faq',
+                    icon: 'fas fa-question',
+                    label: 'faq'
+                }
+            ]
         }
     },
 

@@ -37,5 +37,9 @@ export default {
     you_help_and_stay_informed: "You help and stay informed",
     you_just_earn_points_for_reading_this_text: "You just earned points for reading this text. | You just earned {count} point for reading this text. | You just earned {count} points for reading this text.",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
-    your_points_become_donations: "Your points become donations"
+    your_points_become_donations: "Your points become donations",
+    change_photo: "Change photo",
+    previously_read_news: "Previously read news",
+    ranking_and_badges: "Ranking and badges",
+    faq: "faq"
 }

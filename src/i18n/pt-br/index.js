@@ -37,5 +37,9 @@ export default {
     you_help_and_stay_informed: "Você ajuda e se mantém informado",
     you_just_earn_points_for_reading_this_text: "Você recebeu pontos por ler esse texto. | Você recebeu {count} ponto por ler esse texto. | Você recebeu {count} pontos por ler esse texto.",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Os seus pontos são convertidos automaticamente em doações para nossas ONGs parceiras",
-    your_points_become_donations: "Seus pontos tornam-se doações"
+    your_points_become_donations: "Seus pontos tornam-se doações",
+    change_photo: "Mudar foto",
+    previously_read_news: "Notícias lidas anteriormente",
+    ranking_and_badges: "Ranking e medalhas",
+    faq: "FAQ"
 }

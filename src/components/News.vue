@@ -17,7 +17,7 @@
         </q-card-section>
 
         <q-card-section class="text-right q-pt-none">
-            <q-btn flat dense no-caps :label="$t('keep_reading')" color="primary" @click="$router.push({ name: 'news', params: { id: item.id } })" />
+            <q-btn flat dense no-caps :label="$t('keep_reading')" color="primary" @click="openNews()" />
         </q-card-section>
 
         <q-separator />
@@ -35,6 +35,13 @@ export default {
 
     props: { 
         item: Object 
+    },
+
+    methods: {
+        openNews() {
+            if (this.$route.name === 'home') this.$router.push({ name: 'news', params: { id: this.item.id } })
+            else if (this.$route.name === 'previously-read-news-list') this.$router.push({ name: 'previously-read-news', params: { id: this.item.id } })
+        }
     }
 }
 </script>

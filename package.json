@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-pro": "^5.15.1",
-		"@quasar/extras": "^1.9.13",
+		"@quasar/extras": "^1.9.14",
 		"axios": "^0.21.1",
 		"core-js": "^3.6.5",
 		"quasar": "^1.15.0",

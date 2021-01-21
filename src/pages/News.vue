@@ -18,7 +18,9 @@
 			</div>
 
             <div class="col-12 text-right q-mt-lg">
-                <q-btn no-caps :label="$t('finish_your_reading')" color="primary" @click="show_news_opinion = true" />
+                <q-btn no-caps :label="$t('finish_your_reading')" color="primary" @click="show_news_opinion = true" v-if="$route.name === 'news'" />
+
+                <q-btn no-caps :label="$t('back')" color="primary" @click="$router.replace({ name: 'previously-read-news-list' })" v-if="$route.name === 'previously-read-news'" />
             </div>
 		</div>
 

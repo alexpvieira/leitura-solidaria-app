@@ -11,12 +11,12 @@ const routes = [
 			},
 		],
 		beforeEnter: (to, from, next) => {
-			// if (store.getters['persist/introduction_watched']) {
-			// 	next({name: 'login'})
-			// }
-			// else {
+			if (store.getters['persist/introduction_watched']) {
+				next({name: 'login'})
+			}
+			else {
 				next()
-			// }
+			}
 		}
 	},
 	{
@@ -51,6 +51,36 @@ const routes = [
 				path: 'news/:id',
 				name: 'news',
 				component: () => import('pages/News.vue') 
+			},
+			{
+				path: 'profile',
+				name: 'profile',
+				component: () => import('pages/Profile.vue') 
+			},
+			{
+				path: 'ranking-and-badges',
+				name: 'ranking-and-badges',
+				component: () => import('pages/RankingAndBadges.vue') 
+			},
+			{
+				path: 'previously-read-news',
+				name: 'previously-read-news-list',
+				component: () => import('pages/PreviouslyReadNews.vue') 
+			},
+			{
+				path: 'previously-read-news/:id',
+				name: 'previously-read-news',
+				component: () => import('pages/News.vue')
+			},
+			{
+				path: 'feedback',
+				name: 'feedback',
+				component: () => import('pages/Feedback.vue') 
+			},
+			{
+				path: 'faq',
+				name: 'faq',
+				component: () => import('pages/Faq.vue') 
 			}
 		]
 	},
