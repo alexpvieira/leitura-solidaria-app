@@ -6,7 +6,8 @@
 	"author": "Alex Vieira <alex.vieira@aluno.faculdadeimpacta.com.br>",
 	"private": true,
 	"scripts": {
-		"test": "echo \"No test specified\" && exit 0"
+		"test": "echo \"No test specified\" && exit 0",
+		"deploy": "quasar build && vercel dist/spa --prod"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-pro": "^5.15.1",
