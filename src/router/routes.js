@@ -68,6 +68,11 @@ const routes = [
 				component: () => import('pages/PreviouslyReadNews.vue') 
 			},
 			{
+				path: 'ngos',
+				name: 'ngos',
+				component: () => import('pages/Ngos.vue') 
+			},
+			{
 				path: 'previously-read-news/:id',
 				name: 'previously-read-news',
 				component: () => import('pages/News.vue')

@@ -29,7 +29,7 @@
         </div>
 
         <q-scroll-area style="height: calc(100% - 160px);">
-            <q-list padding separator class="text-blue-grey-5">
+            <q-list padding separator class="text-blue-grey-8">
                 <q-item clickable v-ripple :to="{ name: menu_item.to }" exact v-for="(menu_item, index) in menu_items" :key="index">
                     <q-item-section avatar>
                         <q-icon :name="menu_item.icon" />
@@ -95,6 +95,11 @@ export default {
                     to: 'previously-read-news-list',
                     icon: 'fas fa-newspaper',
                     label: 'previously_read_news'
+                },
+                {
+                    to: 'ngos',
+                    icon: 'fas fa-hands-heart',
+                    label: 'ngos'
                 },
                 {
                     to: 'feedback',

@@ -1,22 +1,25 @@
 <template>
     <q-page class="q-pa-md">
-        <div class="row q-col-gutter-md text-center q-mb-lg">
-            <div class="col-12 text-amber-14 text-h5">
-                <q-icon name="fal fa-medal" /> {{ $t('gold_ranking') }}
+        <div class="row q-col-gutter-md text-center">
+            <div class="col-12 text-weight-bold text-blue-grey-8 text-h5">
+                <q-icon name="fas fa-medal" /> {{ $t('gold_ranking') }}
             </div>
 
-            <div class="col-12">
-                <q-linear-progress stripe rounded size="2.5rem" :value="ranking_progress" color="primary" track-color="secondary">
-                    <div class="absolute-full flex flex-center">
-                        <q-badge color="white" text-color="accent" :label="$tc('points_for_the_next_ranking', points, { count: points })" />
-                    </div>
-                </q-linear-progress>
+            <div class="col-12 q-px-xl">
+                <q-linear-progress stripe rounded size="2.5rem" :value="ranking_progress" color="secondary" class="q-mb-sm" />
+                <span class="text-secondary">
+                    {{ $tc('points_for_the_next_ranking', points, { count: points }) }}
+                </span>
             </div>
         </div>
         
-        <div class="row q-col-gutter-xl text-center q-mt-lg">
+        <div class="row q-col-gutter-lg text-center q-mt-lg">
+            <div class="col-12 text-blue-grey-8 text-h5">
+                {{ $t('achievements') }}
+            </div>
+
             <div class="col-6" v-for="(b, index) in badges" :key="index">
-                <q-avatar size="7rem" font-size="3rem" :color="b.earned ? 'primary' : 'grey-6'" text-color="white" :icon="b.icon" @click="showBadge(b)" class="q-mb-sm" /><br>
+                <q-avatar size="8rem" font-size="3rem" :color="b.earned ? 'primary' : 'grey-5'" text-color="white" :icon="b.icon" @click="showBadge(b)" class="q-mb-sm shadow-8" /><br>
                 
                 <span class="text-body1 text-weight-bold text-blue-grey-8">
                     {{ $t(b.slug) }}

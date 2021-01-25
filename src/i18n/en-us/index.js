@@ -50,5 +50,7 @@ export default {
     you_read_100_news_stories_and_helped_our_ngos_a_lot: "You read 100 news stories and helped our NGOs a lot",
     you_read_news_every_day_for_consecutive_days: "You read news every day for 7 consecutive days",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
-    your_points_become_donations: "Your points become donations"
+    your_points_become_donations: "Your points become donations",
+    achievements: "Achievements",
+    ngos: "NGOs"
 }
