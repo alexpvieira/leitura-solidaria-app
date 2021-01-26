@@ -1,5 +1,11 @@
 <template>
     <q-page class="q-pa-md">
+        <div class="row q-mb-lg">
+            <div class="col-12 text-h6 text-dark text-weight-bold">
+                {{ $t('ranking_and_badges') }}
+            </div>
+        </div>
+
         <div class="row q-col-gutter-md text-center">
             <div class="col-12 text-weight-bold text-blue-grey-8 text-h5">
                 <q-icon name="fas fa-medal" /> {{ $t('gold_ranking') }}

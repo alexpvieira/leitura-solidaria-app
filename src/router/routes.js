@@ -80,7 +80,7 @@ const routes = [
 			{
 				path: 'feedback',
 				name: 'feedback',
-				component: () => import('pages/Feedback.vue') 
+				component: () => import('pages/Feedback.vue')
 			},
 			{
 				path: 'faq',

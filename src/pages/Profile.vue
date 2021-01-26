@@ -1,5 +1,11 @@
 <template>
     <q-page class="q-pa-md">
+        <div class="row q-mb-lg">
+            <div class="col-12 text-h6 text-dark text-weight-bold">
+                {{ $t('profile') }}
+            </div>
+        </div>
+
         <div class="row q-col-gutter-md text-center q-mb-lg">
             <div class="col-12">
                 <q-avatar size="6rem">
