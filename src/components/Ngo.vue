@@ -5,19 +5,16 @@
             <q-btn dense flat icon="fal fa-times" v-close-popup />
         </q-bar>
 
-        <q-card-section>
-            <q-img src="congratulations.svg" />
-        </q-card-section>
+        <img :src="ngo.logo" />
 
         <q-card-section class="q-pt-none">
             <div class="text-body1 text-weight-bold text-blue-grey-8">
-                {{ $t('thanks_for_reading_with_us_today') }}
+                {{ ngo.name }}
             </div>
         </q-card-section>
 
         <q-card-section class="q-pt-none text-blue-grey-8">
-            {{ $t('the_text_you_just_read_helped_a_lot_of_people_thank_you_very_much') }}
-            {{ $tc('you_just_earn_points_for_reading_this_text', points, { count: points }) }}
+            <span v-html="ngo.description"></span>
         </q-card-section>
 
         <q-card-actions align="right" class="text-primary">
@@ -28,10 +25,10 @@
 
 <script>
 export default {
-    name: 'NewsCongratulations',
+    name: 'Ngo',
 
     props: { 
-        points: Number 
+        ngo: Object 
     }
 }
 </script>

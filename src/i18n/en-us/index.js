@@ -63,5 +63,6 @@ export default {
     you_read_news_every_day_for_consecutive_days: "You read news every day for 7 consecutive days",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Your opinion is very important so that we can improve your experience on our app",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
-    your_points_become_donations: "Your points become donations"
+    your_points_become_donations: "Your points become donations",
+    learn_more_about_our_partner_ngos_and_the_work_they_promote: "Learn more about our partner NGOs and the work they promote."
 }

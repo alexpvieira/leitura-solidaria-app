@@ -1,8 +1,8 @@
 {
-	"name": "mba_es",
+	"name": "leitura_solidaria",
 	"version": "0.0.1",
-	"description": "A Quasar Framework app",
-	"productName": "MBA ES",
+	"description": "Ajudar nunca foi tão fácil",
+	"productName": "Leitura Solidária",
 	"author": "Alex Vieira <alex.vieira@aluno.faculdadeimpacta.com.br>",
 	"private": true,
 	"scripts": {

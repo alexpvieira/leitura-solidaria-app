@@ -63,5 +63,6 @@ export default {
     you_read_news_every_day_for_consecutive_days: "Você leu notícias todos os dias por 7 dias consecutivos",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Sua opinião é muito importante para que possamos melhorar a sua experiência em nosso aplicativo",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Os seus pontos são convertidos automaticamente em doações para nossas ONGs parceiras",
-    your_points_become_donations: "Seus pontos tornam-se doações"
+    your_points_become_donations: "Seus pontos tornam-se doações",
+    learn_more_about_our_partner_ngos_and_the_work_they_promote: "Conheça um pouco mais sobre as nossas ONGs parceiras e o trabalho que elas promovem."
 }

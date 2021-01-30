@@ -1,5 +1,10 @@
 <template>
-    <q-card style="min-width: 350px">
+    <q-card>
+        <q-bar class="bg-primary text-white">
+            <q-space />
+            <q-btn dense flat icon="fal fa-times" v-close-popup />
+        </q-bar>
+        
         <q-card-section>
             <q-img src="congratulations.svg" />
         </q-card-section>

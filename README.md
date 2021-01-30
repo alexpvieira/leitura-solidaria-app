@@ -1,6 +1,6 @@
-# MBA ES (mba_es)
+# Leitura Solidária (leitura_solidaria)
 
-A Quasar Framework app
+Ajudar nunca foi tão fácil
 
 ## Install the dependencies
 ```bash

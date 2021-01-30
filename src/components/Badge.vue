@@ -1,5 +1,10 @@
 <template>
-    <q-card style="min-width: 350px">
+    <q-card>
+        <q-bar class="bg-primary text-white">
+            <q-space />
+            <q-btn dense flat icon="fal fa-times" v-close-popup />
+        </q-bar>
+        
         <q-card-section class="text-center">
             <q-avatar size="8rem" font-size="3rem" :color="badge.earned ? 'primary' : 'grey-5'" text-color="white" :icon="badge.icon" class="shadow-8" />
         </q-card-section>
