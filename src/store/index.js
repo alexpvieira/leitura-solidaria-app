@@ -1,16 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VuexPersistence from 'vuex-persist'
+import createPersistedState from 'vuex-persistedstate'
+import SecureLS from 'secure-ls'
 
 // Modules
 import common from './modules/common'
 import persist from './modules/persist'
 
-const vuexLocal = new VuexPersistence({
-    storage: window.localStorage,
-    reducer: state => ({
-		persist: state.persist
-    })
+const ls = new SecureLS({ isCompression: false })
+const dataState = createPersistedState({
+    key: `leitura-solidaria-app`,
+    storage: {
+        getItem: (key) => ls.get(key),
+        setItem: (key, value) => ls.set(key, value),
+        removeItem: (key) => ls.remove(key),
+    },
+    paths: ['persist']
 })
 
 Vue.use(Vuex)
@@ -20,5 +25,5 @@ export default new Vuex.Store({
         common,
         persist
     },
-    plugins: [vuexLocal.plugin]
+    plugins: [dataState]
 })
