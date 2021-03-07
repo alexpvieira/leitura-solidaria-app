@@ -1,5 +1,5 @@
 <template>
-    <q-card class="text-blue-grey-8">
+    <q-card class="text-blue-grey-8 full-height">
         <img :src="item.image" />
 
         <q-card-section>
@@ -12,7 +12,7 @@
             </div>
         </q-card-section>
 
-        <q-card-section class="q-pt-none">
+        <q-card-section class="article_summary q-pt-none">
             {{ item.article_summary }}
         </q-card-section>
 
@@ -46,6 +46,13 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="stylus" scoped>
+.article_summary
+    @media (min-width: $breakpoint-sm-min)
+        line-height 1.5rem
+        min-height 9rem
+        display -webkit-box
+        -webkit-line-clamp 5
+        -webkit-box-orient vertical
+        overflow hidden
 </style>

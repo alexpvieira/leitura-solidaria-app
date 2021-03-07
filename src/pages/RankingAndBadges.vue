@@ -24,7 +24,7 @@
                 {{ $t('achievements') }}
             </div>
 
-            <div class="col-6" v-for="(b, index) in badges" :key="index">
+            <div class="col-xs-6 col-sm-4 col-lg-3" v-for="(b, index) in badges" :key="index">
                 <q-avatar size="8rem" font-size="3rem" :color="b.earned ? 'primary' : 'grey-5'" text-color="white" :icon="b.icon" @click="showBadge(b)" class="q-mb-sm shadow-8" /><br>
                 
                 <span class="text-body1 text-weight-bold text-blue-grey-8">

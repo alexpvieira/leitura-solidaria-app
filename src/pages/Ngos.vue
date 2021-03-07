@@ -11,7 +11,7 @@
         </div>
 
         <div class="row q-col-gutter-sm justify-center">
-            <div class="col-10" v-for="(ngo, index) in ngos" :key="index">
+            <div class="col-xs-10 col-sm-4 col-lg-3" v-for="(ngo, index) in ngos" :key="index">
                 <q-img :src="ngo.logo" :img-style="{ filter: 'grayscale(100%)' }" @click="showNgo(ngo)" />
             </div>
         </div>
