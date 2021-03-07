@@ -5,13 +5,10 @@
 				<c-news :item="item" />
 			</div>
 		</div>
-		
-		<c-ad />
 	</q-page>
 </template>
 
 <script>
-import Ad from 'components/Ad'
 import News from 'components/News'
 import items from '../json/items.json'
 
@@ -25,7 +22,6 @@ export default {
 	},
 
 	components: {
-		'c-ad': Ad,
 		'c-news': News
 	}
 }

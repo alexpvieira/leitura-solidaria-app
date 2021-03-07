@@ -1,5 +1,5 @@
 <template>
-    <q-page class="flex flex-center q-pa-md">
+    <q-page class="q-pa-md">
 		<div class="row q-col-gutter-md text-blue-grey-8">
             <div class="col-12">
                 <q-img :src="item.image" />

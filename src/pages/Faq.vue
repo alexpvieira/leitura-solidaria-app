@@ -1,6 +1,6 @@
 <template>
     <q-page class="q-pa-md">
-        <div class="row q-mb-lg">
+        <div class="row q-mb-lg justify-center">
             <div class="col-12 text-h6 text-dark text-weight-bold">
                 {{ $t('faq') }}
             </div>
@@ -9,17 +9,21 @@
                 {{ $t('you_can_see_below_the_frequently_asked_questions_when_using_our_application_still_in_doubt') }}
                 <router-link :to="{ name: 'feedback', query: { type: 'doubt' } }">{{ $t('send_us_a_message') }}</router-link>
             </div>
+
+            <div class="col-xs-12 col-sm-8 q-mt-md">
+                <q-list separator bordered>
+                    <q-expansion-item group="faq" :label="faq.question" header-class="text-blue-grey-8" v-for="(faq, index) in faqs" :key="index">
+                        <q-card>
+                            <q-card-section>
+                                {{ faq.answer }}
+                            </q-card-section>
+                        </q-card>
+                    </q-expansion-item>
+                </q-list>
+            </div>
         </div>
 
-        <q-list separator bordered>
-            <q-expansion-item group="faq" :label="faq.question" header-class="text-blue-grey-8" v-for="(faq, index) in faqs" :key="index">
-                <q-card>
-                    <q-card-section>
-                        {{ faq.answer }}
-                    </q-card-section>
-                </q-card>
-            </q-expansion-item>
-        </q-list>
+        
     </q-page>
 </template>
 

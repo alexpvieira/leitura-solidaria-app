@@ -10,8 +10,8 @@
             </div>
         </div>
 
-        <q-form @submit.prevent="sendFeedback()" class="row q-col-gutter-md">
-            <div class="col-12">
+        <q-form @submit.prevent="sendFeedback()" class="row q-col-gutter-md justify-center">
+            <div class="col-xs-12 col-sm-8">
                 <q-select outlined dense v-model="subject" :options="subjects" :label="$t('subject')" :display-value="subject ? $t(subject.label) : ''">
                     <template v-slot:option="scope">
                         <q-item v-bind="scope.itemProps" v-on="scope.itemEvents">
@@ -25,11 +25,11 @@
                 </q-select>
             </div>
 
-            <div class="col-12">
+            <div class="col-xs-12 col-sm-8">
                 <q-input outlined dense v-model="feedback" type="textarea" :label="$t('message')" />
             </div>
 
-            <div class="col-12">
+            <div class="col-xs-12 col-sm-8">
                 <q-btn color="primary" class="full-width" type="submit" :label="$t('submit')" />
             </div>
         </q-form>

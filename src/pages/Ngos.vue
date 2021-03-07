@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <q-dialog maximized transition-show="slide-up" transition-hide="slide-down" v-model="show_ngo">
+        <q-dialog :maximized="$q.platform.is.mobile" transition-show="slide-up" transition-hide="slide-down" v-model="show_ngo">
             <c-ngo :ngo="ngo" />
         </q-dialog>
     </q-page>
