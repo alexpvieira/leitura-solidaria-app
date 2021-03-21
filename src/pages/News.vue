@@ -1,29 +1,33 @@
 <template>
     <q-page class="q-pa-md">
-		<div class="row q-col-gutter-md text-blue-grey-8">
-            <div class="col-12">
-                <q-img :src="item.image" />
+        <div class="row justify-center">
+            <div class="col-xs-12 col-sm-6">
+                <div class="row q-col-gutter-md text-blue-grey-8">
+                    <div class="col-12">
+                        <q-img :src="item.image" />
+                    </div>
+
+                    <div class="col-12 text-h6 text-dark text-weight-bold">
+                        {{ item.title }}<br>
+                    </div>
+
+                    <div class="col-12 q-pt-none text-subtitle2">
+                        {{ $t('brought_by') }} {{ item.company }}
+                    </div>
+
+                    <div class="col-12">
+                        <span v-html="item.full_article"></span>
+                    </div>
+
+                    <div class="col-12 text-right q-mt-lg">
+                        <q-btn no-caps :label="$t('finish_your_reading')" color="primary" @click="show_news_opinion = true" v-if="$route.name === 'news'" />
+
+                        <q-btn no-caps :label="$t('back')" color="primary" @click="$router.replace({ name: 'previously-read-news-list' })" v-if="$route.name === 'previously-read-news'" />
+                    </div>
+                </div>
             </div>
-
-            <div class="col-12 text-h6 text-dark text-weight-bold">
-                {{ item.title }}<br>
-            </div>
-
-            <div class="col-12 q-pt-none text-subtitle2">
-                {{ $t('brought_by') }} {{ item.company }}
-            </div>
-
-			<div class="col-12">
-				<span v-html="item.full_article"></span>
-			</div>
-
-            <div class="col-12 text-right q-mt-lg">
-                <q-btn no-caps :label="$t('finish_your_reading')" color="primary" @click="show_news_opinion = true" v-if="$route.name === 'news'" />
-
-                <q-btn no-caps :label="$t('back')" color="primary" @click="$router.replace({ name: 'previously-read-news-list' })" v-if="$route.name === 'previously-read-news'" />
-            </div>
-		</div>
-
+        </div>
+		
         <q-dialog v-model="show_news_opinion" @hide="show_congratulations = true" persistent>
             <c-news-opinion />
         </q-dialog>
