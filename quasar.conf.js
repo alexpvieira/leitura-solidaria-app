@@ -20,7 +20,8 @@ module.exports = function (/* ctx */) {
 		boot: [
 			'axios',
 			'i18n',
-			'fontawesome-pro'
+			'fontawesome-pro',
+			'push-notifications'
 		],
 
 		// https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css

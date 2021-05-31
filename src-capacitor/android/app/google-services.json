@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "88472711941",
+    "project_id": "leitura-solidaria",
+    "storage_bucket": "leitura-solidaria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88472711941:android:920be417f5610b9cd9bd6c",
+        "android_client_info": {
+          "package_name": "br.org.leiturasolidaria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88472711941-dnamiffof5mguk94vtvciilqk2rg7udl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZJAsGwXC-Pf4C7pKMn7Kr2ACj0XWBtUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88472711941-dnamiffof5mguk94vtvciilqk2rg7udl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
