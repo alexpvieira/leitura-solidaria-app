@@ -23,8 +23,10 @@ export default {
     gold_ranking: "Ranking Ouro",
     here_your_reading_is_worth_points: "Aqui sua leitura vale pontos",
     home: "Início",
+    invalid_email_or_password: "Email ou senha inválidos",
     keep_on_reading: "Continuar lendo",
     keep_reading: "Continue lendo...",
+    learn_more_about_our_partner_ngos_and_the_work_they_promote: "Conheça um pouco mais sobre as nossas ONGs parceiras e o trabalho que elas promovem.",
     lets_go: "Vamos lá",
     message: "Mensagem",
     minutes_of_reading: "minutos de leitura | {count} minuto de leitura | {count} minutos de leitura",
@@ -63,6 +65,5 @@ export default {
     you_read_news_every_day_for_consecutive_days: "Você leu notícias todos os dias por 7 dias consecutivos",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Sua opinião é muito importante para que possamos melhorar a sua experiência em nosso aplicativo",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Os seus pontos são convertidos automaticamente em doações para nossas ONGs parceiras",
-    your_points_become_donations: "Seus pontos tornam-se doações",
-    learn_more_about_our_partner_ngos_and_the_work_they_promote: "Conheça um pouco mais sobre as nossas ONGs parceiras e o trabalho que elas promovem."
+    your_points_become_donations: "Seus pontos tornam-se doações"
 }

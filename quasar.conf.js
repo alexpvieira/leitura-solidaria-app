@@ -21,7 +21,9 @@ module.exports = function (/* ctx */) {
 			'axios',
 			'i18n',
 			'fontawesome-pro',
-			'push-notifications'
+			'jwt-decode',
+			//'push-notifications'
+			'vuelidate'
 		],
 
 		// https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -94,7 +96,18 @@ module.exports = function (/* ctx */) {
 			// directives: [],
 
 			// Quasar plugins
-			plugins: []
+			plugins: [
+				'Loading',
+				'Notify',
+				'AppFullscreen',
+				'LocalStorage'
+			],
+			config: {
+				loading: { delay: 0 },
+				capacitor: {
+					iosStatusBarPadding: true
+				}
+			}
 		},
 
 		// animations: 'all', // --- includes all animations
