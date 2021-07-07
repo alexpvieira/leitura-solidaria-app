@@ -31,8 +31,6 @@
                         </div>
                     </div>
                 </q-form>
-
-                {{  }}
             </div>
         </div>
     </q-page>
@@ -46,8 +44,8 @@ export default {
 
     data() {
         return {
-            email: 'main@junior.com',
-            password: '4321'
+            email: '',
+            password: ''
         }
     },
 
