@@ -22,7 +22,8 @@ module.exports = function (/* ctx */) {
 			'i18n',
 			'fontawesome-pro',
 			'jwt-decode',
-			//'push-notifications'
+			'qs',
+			//'push-notifications',
 			'vuelidate'
 		],
 

@@ -64,18 +64,18 @@ export default {
                 this.$axios.post(`/login`, data)
                 .then(response => {
                     this.$store.dispatch('persist/SET_ACCESS_TOKEN', [response.data.Authorization])
+                    this.getUserData()
                 })
                 .catch(e => {
                     console.log(e)
+
+                    this.$q.loading.hide()
 
                     this.$q.notify({
                         message: this.$t('invalid_email_or_password'),
                         type: 'negative',
                         icon: 'fal fa-ban'
                     })
-                })
-                .finally(() => {
-                    this.getUserData()
                 })
             }
         },
@@ -84,6 +84,17 @@ export default {
             this.$axios.get(`/v1/users/mail?mail=${this.$jwtDecode()}`)
             .then(response => {
                 this.$store.dispatch('persist/SET_USER', [response.data])
+
+                if (this.user?.profiles?.type === 'USER') {
+                    this.$router.replace({ name: 'home' })
+                }
+                else {
+                    this.$q.notify({
+                        message: this.$t('this_user_does_not_have_access_to_the_app'),
+                        type: 'negative',
+                        icon: 'fal fa-ban'
+                    })
+                }
             })
             .catch(e => {
                 console.log(e)

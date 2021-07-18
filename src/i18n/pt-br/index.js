@@ -55,6 +55,7 @@ export default {
     thanks_for_reading_with_us_today: "Obrigado por ler conosco hoje",
     thanks_for_sharing_your_opinion: "Obrigado por compartilhar sua opinião",
     the_text_you_just_read_helped_a_lot_of_people_thank_you_very_much: "O texto que você acabou de ler ajudou muitas pessoas. Muito obrigado!",
+    this_user_does_not_have_access_to_the_app: "Esse usuário não possui acesso ao aplicativo",
     we_will_read_your_message_and_respond_shortly_thank_you_for_the_contact: "Iremos ler a sua mensagem e responderemos em breve. Obrigado pelo contato.",
     what_is_your_opinion_about_the_text_you_just_read: "Qual sua opinião sobre o texto que você acabou de ler?",
     you_can_see_below_the_frequently_asked_questions_when_using_our_application_still_in_doubt: "Você pode ver abaixo as perguntas frequentes na utilização do nosso aplicativo. Ainda ficou em dúvida?",
@@ -65,5 +66,7 @@ export default {
     you_read_news_every_day_for_consecutive_days: "Você leu notícias todos os dias por 7 dias consecutivos",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Sua opinião é muito importante para que possamos melhorar a sua experiência em nosso aplicativo",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Os seus pontos são convertidos automaticamente em doações para nossas ONGs parceiras",
-    your_points_become_donations: "Seus pontos tornam-se doações"
+    your_points_become_donations: "Seus pontos tornam-se doações",
+    a_new_password_has_been_sent_to_your_email: "Uma nova senha foi enviada ao seu email",
+    email_not_found: "Email não encontrado"
 }

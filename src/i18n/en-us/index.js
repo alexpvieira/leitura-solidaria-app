@@ -55,6 +55,7 @@ export default {
     thanks_for_reading_with_us_today: "Thanks for reading with us today",
     thanks_for_sharing_your_opinion: "Thanks for sharing your opinion",
     the_text_you_just_read_helped_a_lot_of_people_thank_you_very_much: "The text you juste read helped a lot of people. Thank you very much!",
+    this_user_does_not_have_access_to_the_app: "This user does not have access to the application.",
     we_will_read_your_message_and_respond_shortly_thank_you_for_the_contact: "We will read your message and respond shortly. Thank you for the contact.",
     what_is_your_opinion_about_the_text_you_just_read: "What is your opinion about the text you just read?",
     you_can_see_below_the_frequently_asked_questions_when_using_our_application_still_in_doubt: "You can see below the frequently asked questions when using our application. Still in doubt?",
@@ -65,5 +66,7 @@ export default {
     you_read_news_every_day_for_consecutive_days: "You read news every day for 7 consecutive days",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Your opinion is very important so that we can improve your experience on our app",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
-    your_points_become_donations: "Your points become donations"
+    your_points_become_donations: "Your points become donations",
+    a_new_password_has_been_sent_to_your_email: "A new password has been sent to your email",
+    email_not_found: "Email not found"
 }
