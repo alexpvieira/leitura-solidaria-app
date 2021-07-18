@@ -1,5 +1,6 @@
 export default {
     a_good_start: "A good start",
+    a_new_password_has_been_sent_to_your_email: "A new password has been sent to your email",
     achievements: "Achievements",
     at_no_cost_you_do_good_and_you_also_receive_information_about_our_partners: "At no cost you do good and you also receive information about our partners",
     back: "Back",
@@ -16,6 +17,9 @@ export default {
     dont_have_an_account_sign_up_here: "Don't have an account? Sign up here",
     doubt: "Doubt",
     email: "Email",
+    email_already_used: "Email already used",
+    email_not_found: "Email not found",
+    error_creating_user: "Error creating user",
     every_day_partner_companies_publish_news_that_is_worth_points_when_being_read: "Every day partner companies publish news that is worth points when being read",
     faq: "faq",
     finish_your_reading: "Finish your reading",
@@ -35,6 +39,8 @@ export default {
     not_received_yet: "Not received_yet",
     ok: "Ok",
     password: "Password",
+    password_must_have_at_least_6_characters: "Password must have at least 6 characters",
+    passwords_do_not_match: "Passwords do not match",
     points: "points | {count} point | {count} points",
     points_for_the_next_ranking: "Points for the next ranking | {count} point for the next ranking | {count} points for the next ranking",
     previously_read_news: "Previously read news",
@@ -66,10 +72,5 @@ export default {
     you_read_news_every_day_for_consecutive_days: "You read news every day for 7 consecutive days",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Your opinion is very important so that we can improve your experience on our app",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
-    your_points_become_donations: "Your points become donations",
-    a_new_password_has_been_sent_to_your_email: "A new password has been sent to your email",
-    email_not_found: "Email not found",
-    passwords_do_not_match: "Passwords do not match",
-    email_already_used: "Email already used",
-    password_must_have_at_least_6_characters: "Password must have at least 6 characters"
+    your_points_become_donations: "Your points become donations"
 }

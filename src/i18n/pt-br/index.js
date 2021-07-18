@@ -1,5 +1,6 @@
 export default {
     a_good_start: "Um bom começo",
+    a_new_password_has_been_sent_to_your_email: "Uma nova senha foi enviada ao seu email",
     achievements: "Conquistas",
     at_no_cost_you_do_good_and_you_also_receive_information_about_our_partners: "Sem custo nenhum você faz o bem e de quebra ainda recebe informações sobre os nossos parceiros",
     back: "Voltar",
@@ -16,6 +17,9 @@ export default {
     dont_have_an_account_sign_up_here: "Não possui uma conta? Cadastre-se aqui",
     doubt: "Dúvida",
     email: "Email",
+    email_already_used: "Email já utilizado",
+    email_not_found: "Email não encontrado",
+    error_creating_user: "Erro ao criar usuário",
     every_day_partner_companies_publish_news_that_is_worth_points_when_being_read: "Todos os dias empresas parceiras publicam notícias que valem pontos ao serem lidas",
     faq: "FAQ",
     finish_your_reading: "Finalizar sua leitura",
@@ -35,6 +39,8 @@ export default {
     not_received_yet: "Não recebido ainda",
     ok: "Ok",
     password: "Senha",
+    password_must_have_at_least_6_characters: "A senha deve possuir no mínimo 6 caracteres",
+    passwords_do_not_match: "As senhas não correspondem",
     points: "pontos | {count} ponto | {count} pontos",
     points_for_the_next_ranking: "Pontos para o próximo ranking | {count} ponto para o próximo ranking | {count} pontos para o próximo ranking",
     previously_read_news: "Notícias lidas anteriormente",
@@ -66,10 +72,5 @@ export default {
     you_read_news_every_day_for_consecutive_days: "Você leu notícias todos os dias por 7 dias consecutivos",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Sua opinião é muito importante para que possamos melhorar a sua experiência em nosso aplicativo",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Os seus pontos são convertidos automaticamente em doações para nossas ONGs parceiras",
-    your_points_become_donations: "Seus pontos tornam-se doações",
-    a_new_password_has_been_sent_to_your_email: "Uma nova senha foi enviada ao seu email",
-    email_not_found: "Email não encontrado",
-    passwords_do_not_match: "As senhas não correspondem",
-    email_already_used: "Email já utilizado",
-    password_must_have_at_least_6_characters: "A senha deve possuir no mínimo 6 caracteres"
+    your_points_become_donations: "Seus pontos tornam-se doações"
 }
