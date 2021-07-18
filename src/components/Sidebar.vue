@@ -136,6 +136,8 @@ export default {
         },
         
         signOut() {
+            this.$store.dispatch('persist/SET_ACCESS_TOKEN', [''])
+            this.$store.dispatch('persist/SET_USER', [{}])
             this.$store.dispatch('common/SET_DRAWER_STATE', [false])
             this.$router.push({ name: 'login' })
         }

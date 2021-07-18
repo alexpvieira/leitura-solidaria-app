@@ -68,5 +68,8 @@ export default {
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Os seus pontos são convertidos automaticamente em doações para nossas ONGs parceiras",
     your_points_become_donations: "Seus pontos tornam-se doações",
     a_new_password_has_been_sent_to_your_email: "Uma nova senha foi enviada ao seu email",
-    email_not_found: "Email não encontrado"
+    email_not_found: "Email não encontrado",
+    passwords_do_not_match: "As senhas não correspondem",
+    email_already_used: "Email já utilizado",
+    password_must_have_at_least_6_characters: "A senha deve possuir no mínimo 6 caracteres"
 }

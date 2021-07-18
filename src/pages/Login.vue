@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { required } from 'vuelidate/lib/validators'
 
 export default {
@@ -47,6 +48,12 @@ export default {
             email: '',
             password: ''
         }
+    },
+
+    computed: {
+        ...mapGetters({
+            user: 'persist/user'
+        })
     },
 
     methods: {

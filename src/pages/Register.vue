@@ -9,19 +9,37 @@
                         </div>
 
                         <div class="col-12 q-mt-lg">
-                            <q-input outlined dense v-model="full_name" :label="$t('full_name')" />
+                            <q-input outlined dense hide-bottom-space v-model="full_name" :label="$t('full_name')" :error="$v.full_name.$error" @input="$v.full_name.$touch" />
                         </div>
 
                         <div class="col-12">
-                            <q-input outlined dense v-model="email" :label="$t('email')" />
+                            <q-input outlined dense hide-bottom-space v-model="email" :label="$t('email')" :error="$v.email.$error" @input="$v.email.$touch" @blur="checkEmail()">
+                                <template v-slot:error>
+                                    <span slot="error-label" v-if="email_in_use">
+                                        {{ $t('email_already_used') }}
+                                    </span>
+                                </template>
+                            </q-input>
                         </div>
 
                         <div class="col-12">
-                            <q-input outlined dense v-model="password" type="password" :label="$t('password')" />
+                            <q-input outlined dense hide-bottom-space v-model="password" type="password" :label="$t('password')" :error="$v.password.$error" @input="$v.password.$touch">
+                                <template v-slot:error>
+                                    <span slot="error-label" v-if="password.length < 6">
+                                        {{ $t('password_must_have_at_least_6_characters') }}
+                                    </span>
+                                </template>
+                            </q-input>
                         </div>
 
                         <div class="col-12">
-                            <q-input outlined dense v-model="password_repeat" type="password" :label="$t('confirm_password')" />
+                            <q-input outlined dense hide-bottom-space v-model="password_repeat" type="password" :label="$t('confirm_password')" :error="$v.password_repeat.$error" @input="$v.password_repeat.$touch">
+                                <template v-slot:error>
+                                    <span slot="error-label" v-if="password !== password_repeat">
+                                        {{ $t('passwords_do_not_match') }}
+                                    </span>
+                                </template>
+                            </q-input>
                         </div>
 
                         <div class="col-12">
@@ -39,15 +57,51 @@
 </template>
 
 <script>
+import { required, email, sameAs, minLength } from 'vuelidate/lib/validators'
+
 export default {
     name: 'Register',
 
     data() {
         return {
             email: '',
+            email_in_use: null,
             full_name: '',
             password: '',
             password_repeat: ''
+        }
+    },
+
+    methods: {
+        checkEmail() {
+            if (this.email) {
+                let data = {
+                    mail: this.email
+                }
+
+                this.$axios.post(`/v1/users/check_mail`, data)
+                .then(response => {
+                    this.email_in_use = response.data.in_use
+                })
+                .catch(e => {
+                    console.log(e)
+                })
+            }
+            else this.email_in_use = null
+        }
+    },
+
+    validations() {
+        return {
+            email: { required, email,
+                emailUnique() {
+                    if (!this.email_in_use) return true
+                    else return false
+                }
+            },
+            full_name: { required },
+            password: { required, minLength: minLength(6) },
+            password_repeat: { required, sameAsPassword: sameAs('password') }
         }
     }
 }
