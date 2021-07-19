@@ -30,23 +30,7 @@ export default {
 
     data() {
         return {
-            ngos: [
-                {
-                    logo: 'ngo-1.png',
-                    name: 'Associação de Ajuda',
-                    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.'
-                },
-                {
-                    logo: 'ngo-2.png',
-                    name: 'Benfeitoria',
-                    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.'
-                },
-                {
-                    logo: 'ngo-3.png',
-                    name: 'ONG do Bem',
-                    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis assumenda iusto, blanditiis quaerat quasi eaque officiis, atque ea excepturi vero optio eius cupiditate in numquam placeat necessitatibus minima deleniti deserunt.'
-                },
-            ],
+            ngos: [],
             ngo: {},
             show_ngo: false
         }
@@ -57,10 +41,29 @@ export default {
     },
 
     methods: {
+        getNgos() {
+            this.$q.loading.show()
+
+            this.$axios.get(`/v1/ongs/details`)
+            .then(response => {
+                this.ngos = response.data.map(e => ({...e, logo: e.image}))
+            })
+            .catch(e => {
+                console.log(e)
+            })
+            .finally(() => {
+                this.$q.loading.hide()
+            })
+        },
+
         showNgo(ngo) {
             this.ngo = ngo
             this.show_ngo = true
         }
+    },
+
+    created() {
+        this.getNgos()
     }
 }
 </script>
