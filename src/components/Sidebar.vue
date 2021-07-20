@@ -7,14 +7,19 @@
 
             <div class="row q-col-gutter-lg q-mt-sm">
                 <div class="col-3">
-                    <q-avatar size="56px">
+                    <!-- <q-avatar size="56px">
                         <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+                    </q-avatar> -->
+
+                    <q-avatar size="4rem" color="secondary">
+                        <img :src="user.url_img" v-if="user.url_img">
+                        <q-icon name="fal fa-user" color="white" v-else />
                     </q-avatar>
                 </div>
 
                 <div class="col-9 text-white">
                     <div class="text-weight-bold">
-                        <q-icon name="far fa-user" /> José Roberto da Silva
+                        <q-icon name="far fa-user" /> {{ user.name }}
                     </div>
 
                     <div>
@@ -117,7 +122,8 @@ export default {
 
     computed: {
         ...mapGetters({
-            drawer_open_store: 'common/drawer_open'
+            drawer_open_store: 'common/drawer_open',
+            user: 'persist/user'
         }),
         
         drawerOpen: {
