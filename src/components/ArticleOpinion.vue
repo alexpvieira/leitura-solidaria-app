@@ -12,7 +12,7 @@
 
         <q-card-actions align="right" class="text-primary">
             <q-btn flat no-caps :label="$t('keep_on_reading')" color="secondary" v-close-popup />
-            <q-btn no-caps :label="$t('send_my_opinion')" color="primary" v-close-popup />
+            <q-btn no-caps :label="$t('send_my_opinion')" color="primary" @click="sendOpinion()" />
         </q-card-actions>
     </q-card>
 </template>
@@ -24,6 +24,12 @@ export default {
     data() {
         return {
             article_rating: 0
+        }
+    },
+
+    methods: {
+        sendOpinion() {
+            this.$emit('markArticleAsRead', this.article_rating)
         }
     }
 }

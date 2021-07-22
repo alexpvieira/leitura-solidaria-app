@@ -7,8 +7,12 @@
         </div>
 
         <div class="row q-col-gutter-lg">
-			<div class="col-xs-12 col-sm-4 col-lg-3" v-for="item in home_items" :key="item.id">
-				<c-article :item="item" />
+			<div class="col-xs-12 col-sm-4 col-lg-3" v-for="article in articles" :key="article.cod_article" v-if="!loading">
+				<c-article :article="article" />
+			</div>
+
+			<div class="col-xs-12 col-sm-4 col-lg-3" v-if="!loading && articles.length === 0">
+				<c-no-article />
 			</div>
 		</div>
     </q-page>
@@ -17,14 +21,15 @@
 <script>
 import { mapGetters } from 'vuex'
 import Article from 'components/Article'
-import items from '../json/items.json'
+import NoArticles from 'components/NoArticles'
 
 export default {
     name: 'PreviouslyReadArticles',
 
     data() {
 		return {
-			home_items: items
+			articles: [],
+			loading: true
 		}
 	},
 	
@@ -35,22 +40,25 @@ export default {
     },
 
 	components: {
-		'c-article': Article
+		'c-article': Article,
+		'c-no-article': NoArticles,
 	},
 
 	methods: {
 		getArticles() {
 			this.$q.loading.show()
+			this.loading = true
 
 			this.$axios.get(`/v1/user_article/read/${this.user.cod_user}`)
 			.then(response => {
-				console.log(response)
+				this.articles = response.data
 			})
 			.catch(e => {
 				console.log(e)
 			})
 			.finally(() => {
 				this.$q.loading.hide()
+				this.loading = false
 			})
 		}
 	},

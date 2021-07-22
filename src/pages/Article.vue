@@ -1,22 +1,22 @@
 <template>
     <q-page class="q-pa-md">
-        <div class="row justify-center">
+        <div class="row justify-center" v-if="loaded">
             <div class="col-xs-12 col-sm-6">
                 <div class="row q-col-gutter-md text-blue-grey-8">
                     <div class="col-12">
-                        <q-img :src="item.image" />
+                        <q-img :src="article.image" />
                     </div>
 
                     <div class="col-12 text-h6 text-dark text-weight-bold">
-                        {{ item.title }}<br>
+                        {{ article.title }}<br>
                     </div>
 
                     <div class="col-12 q-pt-none text-subtitle2">
-                        {{ $t('brought_by') }} {{ item.company }}
+                        {{ $t('brought_by') }} {{ article.partner.name }}
                     </div>
 
                     <div class="col-12">
-                        <span v-html="item.full_article"></span>
+                        <span v-html="$decodeMarkdown(article.full_article)"></span>
                     </div>
 
                     <div class="col-12 text-right q-mt-lg">
@@ -28,18 +28,18 @@
             </div>
         </div>
 		
-        <q-dialog v-model="show_article_opinion" @hide="show_congratulations = true" persistent>
-            <c-article-opinion />
+        <q-dialog v-model="show_article_opinion" persistent>
+            <c-article-opinion @markArticleAsRead="markArticleAsRead" />
         </q-dialog>
 
         <q-dialog v-model="show_congratulations" @hide="$router.replace({ name: 'home' })" persistent>
-            <c-article-congratulations :points="item.points" />
+            <c-article-congratulations :points="article.points" />
         </q-dialog>
 	</q-page>
 </template>
 
 <script>
-import items from '../json/items.json'
+import { mapGetters } from 'vuex'
 import ArticleOpinion from 'components/ArticleOpinion'
 import ArticleCongratulations from 'components/ArticleCongratulations'
 
@@ -48,16 +48,71 @@ export default {
 
     data() {
         return {
-            item: items.find(e => e.id == this.$route.params.id),
+            article: {
+                partner: {}
+            },
+            cod_article: null,
             show_article_opinion: false,
-            show_congratulations: false
+            show_congratulations: false,
+            loaded: false
         }
+    },
+
+    computed: {
+        ...mapGetters({
+            user: 'persist/user'
+        })
     },
 
     components: {
         'c-article-opinion': ArticleOpinion,
         'c-article-congratulations': ArticleCongratulations
-    }
+    },
+
+	methods: {
+		getArticle() {
+			this.$q.loading.show()
+
+			this.$axios.get(`/v1/article/details/${this.cod_article}`)
+			.then(response => {
+				this.article = response.data
+                this.loaded = true
+			})
+			.catch(e => {
+				console.log(e)
+			})
+			.finally(() => {
+				this.$q.loading.hide()
+			})
+		},
+
+        markArticleAsRead(article_rating) {
+            this.$q.loading.show()
+            this.show_article_opinion = false
+
+            let data = {
+                cod_article: this.cod_article,
+                cod_user: this.user.cod_user,
+                assessment: article_rating
+            }
+
+			this.$axios.post(`/v1/user_article`, data)
+			.then(response => {
+				this.show_congratulations = true
+			})
+			.catch(e => {
+				console.log(e)
+			})
+			.finally(() => {
+				this.$q.loading.hide()
+			})
+        }
+	},
+
+	created() {
+        this.cod_article = parseInt(this.$route.params.id)
+		this.getArticle()
+	}
 }
 </script>
 

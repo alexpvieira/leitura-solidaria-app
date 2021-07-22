@@ -1,19 +1,19 @@
 <template>
     <q-card class="text-blue-grey-8 full-height">
-        <img :src="item.image" />
+        <q-img :src="article.image" />
 
         <q-card-section>
             <div class="text-h6 text-dark text-weight-bold">
-                {{ item.title }}
+                {{ article.title }}
             </div>
 
             <div class="text-subtitle2">
-                {{ $t('brought_by') }} {{ item.company }}
+                {{ $t('brought_by') }} {{ article.partner.name }}
             </div>
         </q-card-section>
 
         <q-card-section class="article_summary q-pt-none">
-            {{ item.article_summary }}
+            {{ article.article_summary }}
         </q-card-section>
 
         <q-card-section class="text-right q-pt-none">
@@ -23,8 +23,8 @@
         <q-separator />
 
         <q-card-actions>
-            <q-btn flat no-caps color="primary" icon="fal fa-clock" size="sm" :label="$tc('minutes_of_reading', item.minutes, { count: item.minutes })" />
-            <q-btn flat no-caps color="primary" icon="fal fa-trophy" size="sm" :label="$tc('points', item.points, { count: item.points })" />
+            <q-btn flat no-caps color="primary" icon="fal fa-clock" size="sm" :label="$tc('minutes_of_reading', article.minutes, { count: article.minutes })" />
+            <q-btn flat no-caps color="primary" icon="fal fa-trophy" size="sm" :label="$tc('points', article.points, { count: article.points })" />
         </q-card-actions>
     </q-card>
 </template>
@@ -33,12 +33,12 @@
 export default {
     name: 'ComponentArticle',
 
-    props: ['item'],
+    props: ['article'],
 
     methods: {
         openArticle() {
-            if (this.$route.name === 'home') this.$router.push({ name: 'article', params: { id: this.item.id } })
-            else if (this.$route.name === 'previously-read-articles') this.$router.push({ name: 'previously-read-article', params: { id: this.item.id } })
+            if (this.$route.name === 'home') this.$router.push({ name: 'article', params: { id: this.article.cod_article } })
+            else if (this.$route.name === 'previously-read-articles') this.$router.push({ name: 'previously-read-article', params: { id: this.article.cod_article } })
         }
     }
 }

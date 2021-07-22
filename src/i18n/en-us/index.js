@@ -82,5 +82,7 @@ export default {
     you_read_news_every_day_for_consecutive_days: "You read news every day for 7 consecutive days",
     your_opinion_is_very_important_so_that_we_can_improve_your_experience_on_our_app: "Your opinion is very important so that we can improve your experience on our app",
     your_points_are_automatically_converted_into_donations_to_our_partner_ngos: "Your points are automatically converted into donations to our partner NGOs",
-    your_points_become_donations: "Your points become donations"
+    your_points_become_donations: "Your points become donations",
+    no_articles_currently_available: "Nothing to read here",
+    you_are_an_avid_reader_and_have_read_all_of_our_partner_articles_for_today_remember_to_always_check_back_for_news_thanks_for_helping: "You are an avid reader and have read all of our partner articles for today. Remember to always check back for news. Thanks for helping."
 }

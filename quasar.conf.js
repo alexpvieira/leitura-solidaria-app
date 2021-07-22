@@ -23,6 +23,7 @@ module.exports = function (/* ctx */) {
 			'fontawesome-pro',
 			'image-base64',
 			'jwt-decode',
+			'marked',
 			'truncate-text',
 			'qs',
 			//'push-notifications',
