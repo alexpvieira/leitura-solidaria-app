@@ -9,7 +9,7 @@
         <div class="row q-col-gutter-md text-center q-mb-lg">
             <div class="col-12">
                 <q-avatar size="6rem" color="secondary">
-                    <img :src="url_img" v-if="url_img">
+                    <img :src="image" v-if="image">
                     <q-icon name="fal fa-user" color="white" v-else />
                 </q-avatar>
             </div>
@@ -17,7 +17,7 @@
             <div class="col-12">
                 <q-btn flat dense no-caps :label="$t('change_photo')" @click="pickFile()" />
 
-                <q-file outlined dense clearable bg-color="white" v-model="avatar" accept=".jpg, image/*" max-file-size="1048576" @rejected="rejectFile" @input="pickedFile" ref="url_img" v-show="false" />
+                <q-file outlined dense clearable bg-color="white" v-model="avatar" accept=".jpg, image/*" max-file-size="1048576" @rejected="rejectFile" @input="pickedFile" ref="image" v-show="false" />
             </div>
         </div>
 
@@ -67,7 +67,7 @@ export default {
             full_name: '',
             password: '',
             password_repeat: '',
-            url_img: null
+            image: null
         }
     },
 
@@ -78,25 +78,6 @@ export default {
     },
 
     methods: {
-        getUserProfile() {
-            this.$q.loading.show()
-
-            this.$axios.get(`/v1/users/mail?mail=${this.user.mail}`)
-            .then(response => {
-                let d = response.data
-                this.full_name = d.name
-                this.email = d.mail
-                this.url_img = d.url_img
-                this.cod_user = d.cod_user
-            })
-            .catch(e => {
-                console.log(e)
-            })
-            .finally(() => {
-                this.$q.loading.hide()
-            })
-        },
-
         updateProfile() {
             this.$v.$touch()
 
@@ -107,7 +88,7 @@ export default {
                     full_name: this.full_name,
                     mail: this.email,
                     password: this.password,
-                    url_img: this.url_img
+                    image: this.image
                 }
 
                 this.$axios.put(`/v1/users/change_profile/${this.cod_user}`, data)
@@ -119,7 +100,7 @@ export default {
                         ong: this.user.ong,
                         partner: this.user.partner,
                         profiles: this.user.profiles,
-                        url_img: this.url_img
+                        image: this.image
                     }
 
                     this.$store.dispatch('persist/SET_USER', [user])
@@ -166,12 +147,12 @@ export default {
         },
 
         pickFile() {
-            this.$refs.url_img.pickFiles()
+            this.$refs.image.pickFiles()
         },
 
         async pickedFile(value) {
-            if (!value) this.url_img = null
-            else this.url_img = await this.$imageBase64(value)
+            if (!value) this.image = null
+            else this.image = await this.$imageBase64(value)
         },
 
         rejectFile() {
@@ -180,11 +161,14 @@ export default {
                 icon: 'fal fa-ban',
                 message: this.$t('invalid_file_size_or_type')
             })
-        },
+        }
     },
 
     created() {
-        this.getUserProfile()
+        this.cod_user = this.user.cod_user
+        this.email = this.user.mail
+        this.full_name = this.user.name
+        this.image = this.user.image
     },
 
     validations() {

@@ -20,43 +20,43 @@
                     </div>
 
                     <div class="col-12 text-right q-mt-lg">
-                        <q-btn no-caps :label="$t('finish_your_reading')" color="primary" @click="show_news_opinion = true" v-if="$route.name === 'news'" />
+                        <q-btn no-caps :label="$t('finish_your_reading')" color="primary" @click="show_article_opinion = true" v-if="$route.name === 'article'" />
 
-                        <q-btn no-caps :label="$t('back')" color="primary" @click="$router.replace({ name: 'previously-read-news-list' })" v-if="$route.name === 'previously-read-news'" />
+                        <q-btn no-caps :label="$t('back')" color="primary" @click="$router.replace({ name: 'previously-read-articles' })" v-if="$route.name === 'previously-read-article'" />
                     </div>
                 </div>
             </div>
         </div>
 		
-        <q-dialog v-model="show_news_opinion" @hide="show_congratulations = true" persistent>
-            <c-news-opinion />
+        <q-dialog v-model="show_article_opinion" @hide="show_congratulations = true" persistent>
+            <c-article-opinion />
         </q-dialog>
 
         <q-dialog v-model="show_congratulations" @hide="$router.replace({ name: 'home' })" persistent>
-            <c-news-congratulations :points="item.points" />
+            <c-article-congratulations :points="item.points" />
         </q-dialog>
 	</q-page>
 </template>
 
 <script>
 import items from '../json/items.json'
-import NewsOpinion from 'components/NewsOpinion'
-import NewsCongratulations from 'components/NewsCongratulations'
+import ArticleOpinion from 'components/ArticleOpinion'
+import ArticleCongratulations from 'components/ArticleCongratulations'
 
 export default {
-    name: 'PageNews',
+    name: 'PageArticle',
 
     data() {
         return {
             item: items.find(e => e.id == this.$route.params.id),
-            show_news_opinion: false,
+            show_article_opinion: false,
             show_congratulations: false
         }
     },
 
     components: {
-        'c-news-opinion': NewsOpinion,
-        'c-news-congratulations': NewsCongratulations
+        'c-article-opinion': ArticleOpinion,
+        'c-article-congratulations': ArticleCongratulations
     }
 }
 </script>

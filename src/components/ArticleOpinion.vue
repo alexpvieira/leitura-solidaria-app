@@ -7,7 +7,7 @@
         </q-card-section>
 
         <q-card-section class="q-pt-none text-center">
-            <q-rating v-model="news_rating" :max="5" size="2.5em" color="primary" icon="fal fa-star" icon-selected="fas fa-star" />
+            <q-rating v-model="article_rating" :max="5" size="2.5em" color="primary" icon="fal fa-star" icon-selected="fas fa-star" />
         </q-card-section>
 
         <q-card-actions align="right" class="text-primary">
@@ -19,11 +19,11 @@
 
 <script>
 export default {
-    name: 'NewsOpinion',
+    name: 'ArticleOpinion',
 
     data() {
         return {
-            news_rating: 0
+            article_rating: 0
         }
     }
 }

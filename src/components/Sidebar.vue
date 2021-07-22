@@ -12,7 +12,7 @@
                     </q-avatar> -->
 
                     <q-avatar size="4rem" color="secondary">
-                        <img :src="user.url_img" v-if="user.url_img">
+                        <img :src="user.image" v-if="user.image">
                         <q-icon name="fal fa-user" color="white" v-else />
                     </q-avatar>
                 </div>
@@ -92,14 +92,14 @@ export default {
                     label: 'profile'
                 },
                 {
-                    to: 'ranking-and-badges',
+                    to: 'ranking',
                     icon: 'fas fa-trophy',
-                    label: 'ranking_and_badges'
+                    label: 'ranking'
                 },
                 {
-                    to: 'previously-read-news-list',
+                    to: 'previously-read-articles',
                     icon: 'fas fa-newspaper',
-                    label: 'previously_read_news'
+                    label: 'previously_read_articles'
                 },
                 {
                     to: 'ngos',
@@ -138,6 +138,10 @@ export default {
 
     methods: {
         changeLanguage(language) {
+            import('quasar/lang/' + language)
+            .then(lang => {
+                this.$q.lang.set(lang.default)
+            })
 			this.$i18n.locale = language
         },
         

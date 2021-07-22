@@ -9,8 +9,11 @@ const dateTimeFormats = {
     'pt-br': {
         short: {
             year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: false
         },
         long: {
             year: 'numeric',
@@ -24,8 +27,12 @@ const dateTimeFormats = {
     'en-us': {
         short: {
             year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: true
         },
         long: {
             year: 'numeric',

@@ -48,9 +48,9 @@ const routes = [
 				component: () => import('pages/Home.vue') 
 			},
 			{
-				path: 'news/:id',
-				name: 'news',
-				component: () => import('pages/News.vue') 
+				path: 'article/:id',
+				name: 'article',
+				component: () => import('pages/Article.vue') 
 			},
 			{
 				path: 'profile',
@@ -58,14 +58,14 @@ const routes = [
 				component: () => import('pages/Profile.vue') 
 			},
 			{
-				path: 'ranking-and-badges',
-				name: 'ranking-and-badges',
-				component: () => import('pages/RankingAndBadges.vue') 
+				path: 'ranking',
+				name: 'ranking',
+				component: () => import('pages/Ranking.vue') 
 			},
 			{
-				path: 'previously-read-news',
-				name: 'previously-read-news-list',
-				component: () => import('pages/PreviouslyReadNews.vue') 
+				path: 'previously-read-articles',
+				name: 'previously-read-articles',
+				component: () => import('pages/PreviouslyReadArticles.vue')
 			},
 			{
 				path: 'ngos',
@@ -73,9 +73,9 @@ const routes = [
 				component: () => import('pages/Ngos.vue') 
 			},
 			{
-				path: 'previously-read-news/:id',
-				name: 'previously-read-news',
-				component: () => import('pages/News.vue')
+				path: 'previously-read-articles/:id',
+				name: 'previously-read-article',
+				component: () => import('pages/Article.vue')
 			},
 			{
 				path: 'feedback',

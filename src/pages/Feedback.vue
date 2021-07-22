@@ -12,7 +12,7 @@
 
         <q-form @submit.prevent="sendFeedback()" class="row q-col-gutter-md justify-center">
             <div class="col-xs-12 col-sm-8">
-                <q-select outlined dense v-model="subject" :options="subjects" :label="$t('subject')" :display-value="subject ? $t(subject.label) : ''">
+                <q-select outlined dense hide-bottom-space v-model="subject" :options="subjects" :label="$t('subject')" :display-value="subject ? $t(subject.label) : ''" :error="$v.subject.$error" @input="$v.subject.$touch">
                     <template v-slot:option="scope">
                         <q-item v-bind="scope.itemProps" v-on="scope.itemEvents">
                             <q-item-section>
@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-8">
-                <q-input outlined dense v-model="feedback" type="textarea" :label="$t('message')" />
+                <q-input outlined dense hide-bottom-space v-model="feedback" type="textarea" :label="$t('message')" :error="$v.feedback.$error" @input="$v.feedback.$touch" />
             </div>
 
             <div class="col-xs-12 col-sm-8">
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { required } from 'vuelidate/lib/validators'
 import FeedbackCongratulations from 'components/FeedbackCongratulations'
 
 export default {
@@ -67,13 +69,48 @@ export default {
         }
     },
 
+    computed: {
+        ...mapGetters({
+            user: 'persist/user'
+        })
+    },
+
     components: {
         'c-feedback-congratulations': FeedbackCongratulations
     },
 
     methods: {
         sendFeedback() {
-            this.show_feedback_congratulations = true
+            this.$v.$touch()
+
+            if (!this.$v.$error) {
+                this.$q.loading.show()
+
+                let data = {
+                    subject: this.$t(this.subject.label),
+                    message: this.feedback,
+                    cod_user: this.user.cod_user,
+                    name: this.user.name,
+                    mail: this.user.mail
+                }
+
+                this.$axios.post(`/v1/opinion`, data)
+                .then(response => {
+                    this.show_feedback_congratulations = true
+                })
+                .catch(e => {
+                    console.log(e)
+
+                    this.$q.notify({
+                        message: this.$t('error_sending_a_message'),
+                        type: 'negative',
+                        icon: 'fal fa-ban'
+                    })
+                })
+                .finally(() => {
+                    this.$q.loading.hide()
+                })
+            }
         }
     },
 
@@ -83,6 +120,13 @@ export default {
                 label: 'doubt',
                 value: 'doubt'
             }
+        }
+    },
+
+    validations() {
+        return {
+            feedback: { required },
+            subject: { required }
         }
     }
 }

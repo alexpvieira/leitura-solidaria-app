@@ -28,7 +28,7 @@
 
 <script>
 export default {
-    name: 'NewsCongratulations',
+    name: 'ArticlesCongratulations',
 
     props: { 
         points: Number 
