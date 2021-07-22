@@ -92,7 +92,6 @@ export default {
                 sortBy: 'desc'
             },
             points: 30,
-            ranking_progress: 0.7,
             rankings: [{
                 maximum_points: 49,
                 minimum_points: 0,

@@ -7,10 +7,6 @@
 
             <div class="row q-col-gutter-lg q-mt-sm">
                 <div class="col-3">
-                    <!-- <q-avatar size="56px">
-                        <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-                    </q-avatar> -->
-
                     <q-avatar size="4rem" color="secondary">
                         <img :src="user.image" v-if="user.image">
                         <q-icon name="fal fa-user" color="white" v-else />
@@ -23,11 +19,11 @@
                     </div>
 
                     <div>
-                        <q-icon name="far fa-medal" /> {{ $t('gold_ranking') }}
+                        <q-icon name="far fa-medal" /> {{ $t(currentRanking.name) }}
                     </div>
 
                     <div>
-                        <q-icon name="far fa-trophy" /> {{ $tc('points', 100, { count: 100 }) }}
+                        <q-icon name="far fa-trophy" /> {{ $tc('points', points, { count: points }) }}
                     </div>
                 </div>
             </div>
@@ -80,43 +76,53 @@ export default {
 
     data() {
         return {
-			menu_items: [
-                {
-                    to: 'home',
-                    icon: 'fas fa-home',
-                    label: 'home'
-                },
-                {
-                    to: 'profile',
-                    icon: 'fas fa-user-edit',
-                    label: 'profile'
-                },
-                {
-                    to: 'ranking',
-                    icon: 'fas fa-trophy',
-                    label: 'ranking'
-                },
-                {
-                    to: 'previously-read-articles',
-                    icon: 'fas fa-newspaper',
-                    label: 'previously_read_articles'
-                },
-                {
-                    to: 'ngos',
-                    icon: 'fas fa-hands-heart',
-                    label: 'ngos'
-                },
-                {
-                    to: 'feedback',
-                    icon: 'fas fa-comments',
-                    label: 'send_us_your_feedback'
-                },
-                {
-                    to: 'faq',
-                    icon: 'fas fa-question',
-                    label: 'faq'
-                }
-            ]
+            menu_items: [{
+                icon: 'fas fa-home',
+                label: 'home',
+                to: 'home'
+            }, {
+                icon: 'fas fa-user-edit',
+                label: 'profile',
+                to: 'profile'
+            }, {
+                icon: 'fas fa-trophy',
+                label: 'ranking',
+                to: 'ranking'
+            }, {
+                icon: 'fas fa-newspaper',
+                label: 'previously_read_articles',
+                to: 'previously-read-articles'
+            }, {
+                icon: 'fas fa-hands-heart',
+                label: 'ngos',
+                to: 'ngos'
+            }, {
+                icon: 'fas fa-comments',
+                label: 'send_us_your_feedback',
+                to: 'feedback'
+            }, {
+                icon: 'fas fa-question',
+                label: 'faq',
+                to: 'faq'
+            }],
+            rankings: [{
+                maximum_points: 49,
+                minimum_points: 0,
+                name: 'cooper_ranking'
+            }, {
+                maximum_points: 99,
+                minimum_points: 50,
+                name: 'silver_ranking'
+            }, {
+                maximum_points: 199,
+                minimum_points: 100,
+                name: 'gold_ranking'
+            }, {
+                maximum_points: 1000,
+                minimum_points: 200,
+                name: 'platinum_ranking'
+            }],
+            points: 30
         }
     },
 
@@ -133,6 +139,10 @@ export default {
             set(value) {
                 this.$store.dispatch('common/SET_DRAWER_STATE', [value])
             }
+        },
+
+        currentRanking() {
+            return this.rankings.find(e => this.points >= e.minimum_points && this.points <= e.maximum_points)
         }
 	},
 
