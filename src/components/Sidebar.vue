@@ -19,12 +19,16 @@
                     </div>
 
                     <div>
+                        <q-icon name="far fa-at" /> {{ user.mail }}
+                    </div>
+
+                    <!-- <div>
                         <q-icon name="far fa-medal" /> {{ $t(currentRanking.name) }}
                     </div>
 
                     <div>
                         <q-icon name="far fa-trophy" /> {{ $tc('points', points, { count: points }) }}
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -84,10 +88,6 @@ export default {
                 icon: 'fas fa-user-edit',
                 label: 'profile',
                 to: 'profile'
-            }, {
-                icon: 'fas fa-trophy',
-                label: 'ranking',
-                to: 'ranking'
             }, {
                 icon: 'fas fa-newspaper',
                 label: 'previously_read_articles',
