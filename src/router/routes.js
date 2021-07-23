@@ -37,7 +37,21 @@ const routes = [
 				name: 'register',
 				component: () => import('pages/Register.vue') 
 			}
-		]
+		],
+		beforeEnter: (to, from, next) => {
+			let access_token = store.getters['persist/access_token']
+			let user = store.getters['persist/user']
+
+			if (access_token) {
+				if (user?.profiles?.type !== 'USER') next({name: 'home'})
+				else {
+					store.dispatch('persist/SET_ACCESS_TOKEN', [''])
+					store.dispatch('persist/SET_USER', [{}])
+				}
+			}
+			
+			next()
+		}
 	},
 	{
 		path: '/', component: () => import('layouts/MainLayout.vue'),
