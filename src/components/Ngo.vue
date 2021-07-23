@@ -14,7 +14,7 @@
         </q-card-section>
 
         <q-card-section class="q-pt-none text-blue-grey-8">
-            <span v-html="ngo.description"></span>
+            <span v-html="$decodeMarkdown(ngo.description)"></span>
         </q-card-section>
 
         <q-card-actions align="right" class="text-primary">
@@ -27,8 +27,8 @@
 export default {
     name: 'Ngo',
 
-    props: { 
-        ngo: Object 
+    props: {
+        ngo: Object
     }
 }
 </script>
