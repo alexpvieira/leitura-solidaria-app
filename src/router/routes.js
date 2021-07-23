@@ -11,7 +11,18 @@ const routes = [
 			},
 		],
 		beforeEnter: (to, from, next) => {
-			if (store.getters['persist/introduction_watched']) {
+			let access_token = store.getters['persist/access_token']
+			let user = store.getters['persist/user']
+			let introduction_watched = store.getters['persist/introduction_watched']
+			
+			if (access_token) {
+				if (user?.profiles?.type === 'USER') next({name: 'home'})
+				else {
+					store.dispatch('persist/SET_ACCESS_TOKEN', [''])
+					store.dispatch('persist/SET_USER', [{}])
+				}
+			}
+			else if (introduction_watched) {
 				next({name: 'login'})
 			}
 			else {
@@ -43,7 +54,7 @@ const routes = [
 			let user = store.getters['persist/user']
 
 			if (access_token) {
-				if (user?.profiles?.type !== 'USER') next({name: 'home'})
+				if (user?.profiles?.type === 'USER') next({name: 'home'})
 				else {
 					store.dispatch('persist/SET_ACCESS_TOKEN', [''])
 					store.dispatch('persist/SET_USER', [{}])
